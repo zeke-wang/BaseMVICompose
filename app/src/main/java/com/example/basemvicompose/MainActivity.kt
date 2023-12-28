@@ -95,7 +95,7 @@ class MainActivity : ComponentActivity() {
                             composable(RouterMap.LOGIN_VIEW) {
                                 LoginView(onNavigateToMain = {
                                     navController.navigate("mainGraph") {
-                                        popUpTo("loginGraph") {
+                                        popUpTo("mainGraph"){
                                             inclusive = true
                                         }
                                     }
