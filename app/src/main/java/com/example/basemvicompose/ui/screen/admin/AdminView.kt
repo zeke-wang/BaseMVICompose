@@ -5,6 +5,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 
 @Composable
-fun HomeView() {
-    Text(text = "home")
+fun AdminView() {
+    Text(text = "admin")
 }

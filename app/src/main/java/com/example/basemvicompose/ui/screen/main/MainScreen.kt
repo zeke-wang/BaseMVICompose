@@ -2,7 +2,6 @@ package com.example.basemvicompose.ui.screen.main
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
@@ -19,7 +18,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -30,12 +28,11 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.basemvicompose.R
 import com.example.basemvicompose.config.NavRoute
-import com.example.basemvicompose.ui.screen.admin.HomeView
-import com.example.basemvicompose.ui.screen.home.AdminView
+import com.example.basemvicompose.ui.screen.admin.AdminView
+import com.example.basemvicompose.ui.screen.home.HomeView
 
 @Composable
-fun MainScreen(
-) {
+fun MainScreen() {
     val showBottomBar = remember { mutableStateOf(true) }
     val navController = rememberNavController()
     Scaffold(
@@ -60,7 +57,7 @@ fun MainScreen(
         MainNavHost(
             modifier = Modifier.padding(innerPadding),
             navController = navController,
-            startDestination = NavRoute.MainRouter.route,
+            startDestination = NavRoute.HomeRouter.route,
         )
     }
 }
@@ -105,7 +102,6 @@ private fun HomeBottomBar(
                     }
                     Icon(
                         imageVector = icon,
-                        modifier = Modifier.size(16.dp),
                         contentDescription = null
                     )
                 },
