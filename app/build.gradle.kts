@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    kotlin("kapt")
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -66,5 +68,13 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+    // navigation
     implementation(libs.navigation.compose)
+    // hilt
+    implementation(libs.hilt)
+    kapt(libs.hilt.android.compiler)
+}
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

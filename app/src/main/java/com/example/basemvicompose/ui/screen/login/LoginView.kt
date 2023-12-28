@@ -16,7 +16,6 @@ fun LoginView(navigateTo: (route: String) -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize() // 这里设置撑满父布局
-            .background(Color.Gray)
     ) {
         Button(
             onClick = { navigateTo(NavRoute.MainRouter.route) },

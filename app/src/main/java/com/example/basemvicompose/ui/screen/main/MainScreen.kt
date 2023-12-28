@@ -33,25 +33,23 @@ import com.example.basemvicompose.ui.screen.home.HomeView
 
 @Composable
 fun MainScreen() {
-    val showBottomBar = remember { mutableStateOf(true) }
+//    val showBottomBar = remember { mutableStateOf(true) }
     val navController = rememberNavController()
     Scaffold(
         bottomBar = {
-            if (showBottomBar.value) {
-                HomeBottomBar(
-                    destinations = topLevelScreens,
-                    currentDestination = navController.currentBackStackEntryAsState().value?.destination,
-                    onNavigateToDestination = {
-                        navController.navigate(it) {
-                            popUpTo(navController.graph.findStartDestination().id) {
-                                saveState = true
-                            }
-                            restoreState = true
-                            launchSingleTop = true
+            HomeBottomBar(
+                destinations = topLevelScreens,
+                currentDestination = navController.currentBackStackEntryAsState().value?.destination,
+                onNavigateToDestination = {
+                    navController.navigate(it) {
+                        popUpTo(navController.graph.findStartDestination().id) {
+                            saveState = true
                         }
+                        restoreState = true
+                        launchSingleTop = true
                     }
-                )
-            }
+                }
+            )
         }
     ) { innerPadding ->
         MainNavHost(
