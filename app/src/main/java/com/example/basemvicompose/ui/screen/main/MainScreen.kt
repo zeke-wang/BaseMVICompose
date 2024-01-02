@@ -13,8 +13,6 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
@@ -28,8 +26,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.basemvicompose.R
 import com.example.basemvicompose.config.NavRoute
-import com.example.basemvicompose.ui.screen.admin.AdminView
-import com.example.basemvicompose.ui.screen.home.HomeView
+import com.example.basemvicompose.ui.screen.main.admin.AdminScreen
+import com.example.basemvicompose.ui.screen.main.home.HomeScreen
 
 @Composable
 fun MainScreen() {
@@ -71,10 +69,10 @@ fun MainNavHost(
         navController = navController, startDestination = startDestination, modifier = modifier
     ) {
         composable(route = NavRoute.HomeRouter.route) {
-            HomeView()
+            HomeScreen()
         }
         composable(route = NavRoute.AdminRouter.route) {
-            AdminView()
+            AdminScreen()
         }
     }
 }

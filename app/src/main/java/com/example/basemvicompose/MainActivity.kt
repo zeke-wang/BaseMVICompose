@@ -9,7 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.basemvicompose.config.NavRoute
-import com.example.basemvicompose.ui.screen.login.LoginView
+import com.example.basemvicompose.ui.screen.login.LoginScreen
 import com.example.basemvicompose.ui.screen.main.MainScreen
 import com.example.basemvicompose.ui.theme.AppTheme
 
@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
                         MainScreen()
                     }
                     composable(route = NavRoute.LoginRouter.route) {
-                        LoginView {
+                        LoginScreen {
                             navController.navigate(it){
                                 popUpTo(NavRoute.LoginRouter.route){
                                     inclusive = true

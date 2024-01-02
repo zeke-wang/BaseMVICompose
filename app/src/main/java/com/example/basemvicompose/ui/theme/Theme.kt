@@ -1,21 +1,13 @@
 package com.example.basemvicompose.ui.theme
 
-import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
-import androidx.core.view.WindowCompat
 
-private val LightColorScheme = lightColorScheme(
+
+private val LightColors = lightColorScheme(
     primary = md_theme_light_primary,
     onPrimary = md_theme_light_onPrimary,
     primaryContainer = md_theme_light_primaryContainer,
@@ -29,18 +21,18 @@ private val LightColorScheme = lightColorScheme(
     tertiaryContainer = md_theme_light_tertiaryContainer,
     onTertiaryContainer = md_theme_light_onTertiaryContainer,
     error = md_theme_light_error,
-    errorContainer = md_theme_light_errorContainer,
     onError = md_theme_light_onError,
+    errorContainer = md_theme_light_errorContainer,
     onErrorContainer = md_theme_light_onErrorContainer,
+    outline = md_theme_light_outline,
     background = md_theme_light_background,
     onBackground = md_theme_light_onBackground,
     surface = md_theme_light_surface,
     onSurface = md_theme_light_onSurface,
     surfaceVariant = md_theme_light_surfaceVariant,
     onSurfaceVariant = md_theme_light_onSurfaceVariant,
-    outline = md_theme_light_outline,
-    inverseOnSurface = md_theme_light_inverseOnSurface,
     inverseSurface = md_theme_light_inverseSurface,
+    inverseOnSurface = md_theme_light_inverseOnSurface,
     inversePrimary = md_theme_light_inversePrimary,
     surfaceTint = md_theme_light_surfaceTint,
     outlineVariant = md_theme_light_outlineVariant,
@@ -48,7 +40,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 
-private val DarkColorScheme = darkColorScheme(
+private val DarkColors = darkColorScheme(
     primary = md_theme_dark_primary,
     onPrimary = md_theme_dark_onPrimary,
     primaryContainer = md_theme_dark_primaryContainer,
@@ -62,18 +54,18 @@ private val DarkColorScheme = darkColorScheme(
     tertiaryContainer = md_theme_dark_tertiaryContainer,
     onTertiaryContainer = md_theme_dark_onTertiaryContainer,
     error = md_theme_dark_error,
-    errorContainer = md_theme_dark_errorContainer,
     onError = md_theme_dark_onError,
+    errorContainer = md_theme_dark_errorContainer,
     onErrorContainer = md_theme_dark_onErrorContainer,
+    outline = md_theme_dark_outline,
     background = md_theme_dark_background,
     onBackground = md_theme_dark_onBackground,
     surface = md_theme_dark_surface,
     onSurface = md_theme_dark_onSurface,
     surfaceVariant = md_theme_dark_surfaceVariant,
     onSurfaceVariant = md_theme_dark_onSurfaceVariant,
-    outline = md_theme_dark_outline,
-    inverseOnSurface = md_theme_dark_inverseOnSurface,
     inverseSurface = md_theme_dark_inverseSurface,
+    inverseOnSurface = md_theme_dark_inverseOnSurface,
     inversePrimary = md_theme_dark_inversePrimary,
     surfaceTint = md_theme_dark_surfaceTint,
     outlineVariant = md_theme_dark_outlineVariant,
@@ -82,17 +74,17 @@ private val DarkColorScheme = darkColorScheme(
 
 @Composable
 fun AppTheme(
-    useDarkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
+  useDarkTheme: Boolean = isSystemInDarkTheme(),
+  content: @Composable() () -> Unit
 ) {
-    val colors = if (!useDarkTheme) {
-        LightColorScheme
-    } else {
-        DarkColorScheme
-    }
+  val colors = if (!useDarkTheme) {
+    LightColors
+  } else {
+    DarkColors
+  }
 
-    MaterialTheme(
-        colorScheme = colors,
-        content = content
-    )
+  MaterialTheme(
+    colorScheme = colors,
+    content = content
+  )
 }

@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
-    kotlin("kapt")
-    alias(libs.plugins.hilt)
+//    kotlin("kapt")
+//    alias(libs.plugins.hilt)
 }
 
 android {
@@ -71,10 +71,18 @@ dependencies {
     // navigation
     implementation(libs.navigation.compose)
     // hilt
-    implementation(libs.hilt)
-    kapt(libs.hilt.android.compiler)
+//    implementation(libs.hilt)
+//    kapt(libs.hilt.android.compiler)
+    // koin
+    implementation("io.insert-koin:koin-androidx-compose:3.5.3")
+    // retrofit2
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.1.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
+    // icon+
+    implementation("androidx.compose.material:material-icons-extended:1.5.4")
 }
 // Allow references to generated code
-kapt {
-    correctErrorTypes = true
-}
+//kapt {
+//    correctErrorTypes = true
+//}
